@@ -4,3 +4,6 @@ Revision history for Perl extension Lemonldap::Portal::Authntsso.
 	- original version; created by h2xs 1.22 with options
 		-AXn Lemonldap::Portal::Authntsso
 10 Dec 2004 : add presence test of Net::LDAP in Makefile.PL 
+0.04  13 Jan 2005 : - add use MIME::Base64
+                    - modification  of Makefile.PL  
+                        

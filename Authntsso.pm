@@ -4,7 +4,8 @@ use warnings;
 use Net::LDAP;
 use Authen::Smb;
 use Data::Dumper;
-our $VERSION = '0.03';
+use MIME::Base64;
+our $VERSION = '0.04';
 sub new
  {
 my $class =shift;
@@ -52,7 +53,7 @@ sub __none {  #does ...nothing;
 sub  __controlUrlOrigin { 
     my $urldc;
     my $self = shift;
-    my $urlc = $self->{param}->{'urlc'};
+    my $urlc = $self->{param}->{'url'};
    
 if ( defined ( $urlc) )
  {
@@ -262,6 +263,10 @@ sub infoSession {
 my $self= shift;
 return ($self->{infosession});
 }
+sub getAllRedirection {
+my $self= shift;
+return ($self->{urlc},$self->{urldc});
+}
 sub getRedirection {
 my $self= shift;
 return ($self->{urldc});
@@ -432,6 +437,15 @@ my $stack_user= Lemonldap::Portal::Authntsso->new('standard_method' => \&my_meth
 
   return a reference of hash of session 
  
+=head2 getRedirection ()
+
+  return a plaintext url of redirection
+ 
+=head2 (urlc,urldc) :getAllRedirection ()
+
+  return a  list of encoded url and decoded  url of redirection
+ 
+
 =head1 SEE ALSO
 
 Lemonldap(3), Lemonldap::Handler::Intrusion(3), Lemonldap::Standard.
