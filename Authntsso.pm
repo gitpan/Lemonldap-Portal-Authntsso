@@ -4,7 +4,7 @@ use warnings;
 use Net::LDAP;
 use Authen::Smb;
 use Data::Dumper;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 sub new
  {
 my $class =shift;
