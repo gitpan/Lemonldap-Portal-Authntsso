@@ -7,3 +7,4 @@ Revision history for Perl extension Lemonldap::Portal::Authntsso.
 0.04  13 Jan 2005 : - add use MIME::Base64
                     - modification  of Makefile.PL  
                         
+0.05  24 Feb 2005 : traited with perltidy
